@@ -27,7 +27,7 @@ import java.util.concurrent.Executors;
 /**
  * Created by maitian13 on 2016/11/21.
  */
-public class NettyServer implements Server,ChannelHandler{
+public class NettyServer implements Server,EndPoint{
     private InetSocketAddress localAddress;
     private InetSocketAddress bindAddress;
     private ServerBootstrap bootstrap;

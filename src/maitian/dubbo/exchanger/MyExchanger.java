@@ -1,6 +1,5 @@
 package maitian.dubbo.exchanger;
 
-import maitian.dubbo.netty.ChannelHandler;
 import maitian.dubbo.netty.Transporters;
 import maitian.dubbo.utils.URL;
 

@@ -10,12 +10,12 @@ import maitian.dubbo.utils.URL;
  */
 public class NettyTransporter implements Transporter{
     @Override
-    public ChannelHandler bind(URL url, ExhangeHandler dispatcher) {
+    public EndPoint bind(URL url, ExhangeHandler dispatcher) {
         return new NettyServer(url,dispatcher);
     }
 
     @Override
-    public ChannelHandler connect(URL url) {
+    public EndPoint connect(URL url) {
         return new NettyClient(url);
     }
 }

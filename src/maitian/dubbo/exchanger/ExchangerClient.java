@@ -1,15 +1,15 @@
 package maitian.dubbo.exchanger;
 
-import maitian.dubbo.netty.ChannelHandler;
 import maitian.dubbo.netty.Client;
+import maitian.dubbo.netty.EndPoint;
 
 /**
  * Created by maitian13 on 2016/11/24.
  */
 public class ExchangerClient{
-    private ChannelHandler client;
+    private EndPoint client;
     private final ExchangeChannel channel;
-    public ExchangerClient(ChannelHandler client){
+    public ExchangerClient(EndPoint client){
         this.client=client;
         this.channel=new ExchangeChannel(client);
     }

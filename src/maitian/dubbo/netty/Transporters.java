@@ -21,10 +21,10 @@ public class Transporters {
         }
         return transporter;
     }
-    public static ChannelHandler bind(URL url,ExhangeHandler dispatcher){
+    public static EndPoint bind(URL url,ExhangeHandler dispatcher){
         return getTranspoter().bind(url,dispatcher);
     }
-    public static ChannelHandler connect(URL url){
+    public static EndPoint connect(URL url){
         return getTranspoter().connect(url);
     };
 }

@@ -1,4 +1,4 @@
-package maitian.dubbo.netty;
+package maitian.dubbo.testMain;
 
 import maitian.dubbo.exchanger.ExchangerClient;
 import maitian.dubbo.exchanger.Exchangers;

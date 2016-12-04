@@ -8,6 +8,6 @@ import maitian.dubbo.utils.URL;
  * Created by maitian13 on 2016/11/21.
  */
 public interface Transporter {
-    ChannelHandler bind(URL url,ExhangeHandler dispatcher);
-    ChannelHandler connect(URL url);
+    EndPoint bind(URL url,ExhangeHandler dispatcher);
+    EndPoint connect(URL url);
 }

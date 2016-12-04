@@ -1,4 +1,4 @@
-package maitian.dubbo.netty;
+package maitian.dubbo.testMain;
 
 import maitian.dubbo.dispatcher.Replier;
 import maitian.dubbo.dispatcher.ReplierDispatcher;

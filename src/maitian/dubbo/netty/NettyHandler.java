@@ -20,14 +20,9 @@ public class NettyHandler extends ChannelInboundHandlerAdapter {//ChannelInbound
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         System.out.println("Inbound~");
         Object result=server.received(msg);
-        //System.out.println("server finish"+result.toString());
-        //ByteBuf encoded = ctx.alloc().buffer(4 * ((String)result).length());
-        //encoded.writeBytes(((String)result).getBytes());
-        //ctx.write(result);
         ctx.write(result);
         ctx.flush();
         System.out.println("flushed!");
-        //ctx.close();
         super.channelRead(ctx,msg);
     }
 

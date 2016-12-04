@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by maitian13 on 2016/11/21.
  */
-public class NettyClient implements Client,ChannelHandler{
+public class NettyClient implements Client,EndPoint{
     private Bootstrap bootstrap;
     private InetSocketAddress bindAddress;
     private InetSocketAddress localAddress;

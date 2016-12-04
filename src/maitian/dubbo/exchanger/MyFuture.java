@@ -1,7 +1,7 @@
 package maitian.dubbo.exchanger;
 
-import maitian.dubbo.netty.ChannelHandler;
 import maitian.dubbo.netty.Client;
+import maitian.dubbo.netty.EndPoint;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -17,17 +17,17 @@ public class MyFuture {
     //private static final Map<Long, Channel> CHANNELS   = new ConcurrentHashMap<Long, Channel>();
 
     private static final Map<Long, MyFuture> FUTURES   = new ConcurrentHashMap<Long, MyFuture>();
-    private static final Map<Long, ChannelHandler>       CHANNELS   = new ConcurrentHashMap<Long, ChannelHandler>();
+    private static final Map<Long, EndPoint>       CHANNELS   = new ConcurrentHashMap<Long, EndPoint>();
     //// TODO: 2016/11/24 这里的锁难道只是用来等待response的么
     private final Lock lock = new ReentrantLock();
     private final Condition done = lock.newCondition();
     private final long id;
-    private final ChannelHandler client;
+    private final EndPoint client;
     private final Request request;
     private ResponseCallback callback;
     //// TODO: 2016/11/24 这里使用同步变量
     private volatile Response response;
-    public MyFuture(ChannelHandler client, Request request){
+    public MyFuture(EndPoint client, Request request){
         this.client = client;
         this.request = request;
         this.id = request.getId();
